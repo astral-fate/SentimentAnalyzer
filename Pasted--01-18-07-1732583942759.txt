@@ -1,0 +1,177 @@
+───────────────────────────────────────────────────────────────────────────────────────
+
+[01:18:07] 🖥 Provisioning machine...
+
+[01:18:07] 🎛 Preparing system...
+
+[01:18:07] ⛓ Spinning up manager process...
+
+[01:18:04] 🚀 Starting up repository: 'sentimentanalyzericl', branch: 'main', main module: 'main.py'
+
+[01:18:04] 🐙 Cloning repository...
+
+[01:18:11] 🐙 Cloning into '/mount/src/sentimentanalyzericl'...
+Updating files: 100% (49/49), done.
+
+[01:18:12] 🐙 Cloned repository!
+
+[01:18:12] 🐙 Pulling code changes from Github...
+
+[01:18:14] 📦 Processing dependencies...
+
+Prepared [2024-11-26 01:18:18.278405] 69 packages[2024-11-26 01:18:18.278702]  [2024-11-26 01:18:18.278949] in 3.27s[2024-11-26 01:18:18.279214] 
+
+Installed 69 packages in 151ms
+
+ + aiohappyeyeballs==2.4.3
+
+ + aiohttp==3.11.7
+
+ + aiosignal==1.3.1
+
+ + altair==5.5.0
+
+ + annotated-types==0.7.0
+
+ + anyio==4.6.2.post1
+
+ + attrs==24.2.0
+
+ + blinker==1.9.0
+
+ + cachetools==5.5.0
+
+ + certifi==2024.8.30
+
+ [2024-11-26 01:18:18.429292] + charset-normalizer==3.4.0
+
+ + click==8.1.7
+
+ + datasets==3.1.0
+
+ + dill==0.3.8
+
+ + distro==1.9.0
+
+ + filelock==3.16.1
+
+ + fpdf==1.7.2
+
+ + frozenlist==1.5.0
+
+ + fsspec==2024.9.0
+
+ + gitdb==4.0.11
+
+ + gitpython==3.1.43
+
+ + h11==0.14.0
+
+ + [2024-11-26 01:18:18.430309] httpcore==1.0.7
+
+ + httpx==0.27.2
+
+ + huggingface-hub==0.26.2
+
+ [2024-11-26 01:18:18.430557] + idna==3.10
+
+ + jinja2==3.1.4
+
+ + jiter==0.7.1
+
+ + jsonschema==4.23.0
+
+ + jsonschema-specifications==2024.10.1
+
+ + markdown-it-py==3.0.0[2024-11-26 01:18:18.431067] 
+
+ + markupsafe==3.0.2
+
+ + mdurl==0.1.2
+
+ + multidict==6.1.0
+
+ + multiprocess==0.70.16
+
+ + narwhals[2024-11-26 01:18:18.431290] ==1.14.2
+
+ + numpy==2.1.3
+
+ + openai==1.55.1
+
+ + packaging==24.2[2024-11-26 01:18:18.431505] 
+
+ + pandas==2.2.3
+
+ + pillow==11.0.0
+
+ + propcache==0.2.0
+
+ + protobuf==5.28.3
+
+ + pyarrow==18.0.0
+
+ + pydantic==2.10.1
+
+ +[2024-11-26 01:18:18.431922]  pydantic-core==2.27.1
+
+ + pydeck==0.9.1
+
+ + pygments==2.18.0
+
+ +[2024-11-26 01:18:18.432288]  python-dateutil==2.9.0.post0
+
+ + pytz==2024.2
+
+ + pyyaml==6.0.2
+
+ [2024-11-26 01:18:18.432614] + referencing==0.35.1
+
+ + requests==2.32.3
+
+ + rich==13.9.4
+
+ +[2024-11-26 01:18:18.432829]  rpds-py==0.21.0
+
+ + six==1.16.0
+
+ + smmap==5.0.1
+
+ + sniffio[2024-11-26 01:18:18.433051] ==1.3.1
+
+ + streamlit==1.40.2
+
+ + tenacity==9.0.0
+
+ + toml==[2024-11-26 01:18:18.433318] 0.10.2
+
+ + tornado==6.4.2
+
+ + tqdm==4.67.1
+
+ + typing-extensions==[2024-11-26 01:18:18.434349] 4.12.2
+
+ + tzdata==2024.2
+
+ + urllib3==2.2.3
+
+ + watchdog==[2024-11-26 01:18:18.434709] 6.0.0
+
+ + xxhash==3.5.0
+
+ + yarl==1.18.0
+
+[01:18:19] 🐍 Python dependencies were installed from /mount/src/sentimentanalyzericl/uv.lock using uv-sync.
+
+[01:18:19] 📦 WARN: More than one requirements file detected in the repository. Available options: uv-sync /mount/src/sentimentanalyzericl/uv.lock, poetry /mount/src/sentimentanalyzericl/pyproject.toml. Used: uv-sync with /mount/src/sentimentanalyzericl/uv.lock
+
+Check if streamlit is installed
+
+Streamlit is already installed
+
+[01:18:20] 📦 Processed dependencies!
+
+
+
+
+[01:18:25] ❗️ The service has encountered an error while checking the health of the Streamlit app: Get "http://localhost:8501/healthz": dial tcp 127.0.0.1:8501: connect: connection refused
