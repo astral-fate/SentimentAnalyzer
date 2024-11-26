@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sys
+import os
 from utils.data_loader import load_imdb_dataset
 from utils.groq_client import GroqAnalyzer
 from utils.prompt_templates import zero_shot_prompt, few_shot_prompt
@@ -10,11 +11,24 @@ from utils.report_generator import generate_report
 def healthz():
     return "ok"
 
-if "healthz" in sys.argv:
-    print(healthz())
-    sys.exit(0)
+def handle_startup_error(error):
+    """Handle server startup errors gracefully"""
+    print(f"Error starting Streamlit server: {str(error)}")
+    sys.exit(1)
 
-st.set_page_config(page_title="Sentiment Analysis with LLaMA 3.1", layout="wide")
+try:
+    # Set environment variable for port
+    os.environ['STREAMLIT_SERVER_PORT'] = '5000'
+    os.environ['STREAMLIT_SERVER_ADDRESS'] = '0.0.0.0'
+
+    if __name__ == "__main__":
+        if len(sys.argv) > 1 and sys.argv[1] == "healthz":
+            print(healthz())
+            sys.exit(0)
+
+    st.set_page_config(page_title="Sentiment Analysis with LLaMA 3.1", layout="wide")
+except Exception as e:
+    handle_startup_error(e)
 
 def main():
     st.title("Sentiment Analysis System using LLaMA 3.1")
