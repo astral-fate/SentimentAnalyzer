@@ -28,7 +28,8 @@ def main():
             dataset = load_imdb_dataset()
             
         # Select first 100 examples from test set
-        test_samples = dataset['test'].select(range(100))
+        test_dataset = dataset['test']
+        test_samples = test_dataset.select(range(100))
         
         results = []
         accuracies = {'Zero-shot': 0, 'Few-shot': 0}
@@ -36,14 +37,17 @@ def main():
         progress_bar = st.progress(0)
         status_text = st.empty()
         
-        for idx, sample in enumerate(test_samples):
+        for idx in range(len(test_samples)):
             progress = (idx + 1) / len(test_samples)
             progress_bar.progress(progress)
             status_text.text(f"Processing example {idx + 1}/{len(test_samples)}")
             
-            # Get prediction
-            text = sample['text']
-            true_label = "positive" if sample['label'] == 1 else "negative"
+            # Get prediction using proper dataset access
+            sample = test_samples[idx]
+            text = sample.get('text', '')
+            # Using get() with default value for safer access
+            label_value = sample.get('label', 0)
+            true_label = "positive" if label_value == 1 else "negative"
             
             if prompt_type == "Zero-shot":
                 prompt = zero_shot_prompt(text)

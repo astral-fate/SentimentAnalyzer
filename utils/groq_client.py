@@ -22,7 +22,15 @@ class GroqAnalyzer:
                 max_tokens=50
             )
             
-            result = response.choices[0].message.content.strip().lower()
+            # Add null check and proper response handling
+            if not response or not response.choices or not response.choices[0].message:
+                return "unknown"
+            
+            content = response.choices[0].message.content
+            if not content:
+                return "unknown"
+                
+            result = content.strip().lower()
             
             # Normalize response
             if "positive" in result:
@@ -33,4 +41,5 @@ class GroqAnalyzer:
                 return "unknown"
                 
         except Exception as e:
-            raise Exception(f"Error calling Groq API: {str(e)}")
+            print(f"Error in Groq API call: {str(e)}")
+            return "unknown"  # Graceful error handling
