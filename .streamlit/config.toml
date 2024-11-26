@@ -1,6 +1,4 @@
 [server]
-port = 5000
-address = "0.0.0.0"
 headless = true
 enableCORS = true
 enableXsrfProtection = false
@@ -8,7 +6,6 @@ maxUploadSize = 200
 runOnSave = true
 
 [browser]
-serverAddress = "0.0.0.0"
 gatherUsageStats = false
 
 [theme]
